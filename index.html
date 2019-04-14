@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<title>Skip's Test Site</title>
+<meta charset="UTF-8">
+</head><body>
+
+<h1>Skip's Test Site</h1>
+<div id="info"></div>
+<hr/>
+<div id="loc"></div>
+<script>
+	var el = document.getElementById("info");
+	el.innerHTML = "location.protocol = " + location.protocol + "<br/>"
+		+ "window.location.pathname = " + window.location.pathname + "<br/>"
+		+ "server macro = <pre>{{SERVER}}</pre>" + "<br/>";
+
+	getCurrentLocation();
+
+	function getCurrentLocation() {
+		console.log("getCurrentLocation: getCurrentPosition...");
+		navigator.geolocation.getCurrentPosition(
+			function (pos) {
+				if (pos.coords != null) {
+					var lat = pos.coords.latitude;
+					var lon = pos.coords.longitude;
+					var msg = lat + ", " + lon;
+					console.log("getCurrentLocation: " + msg);
+					document.getElementById("loc").innerHTML = msg;
+				}
+			},
+			function error(err) {
+				var msg = `ERROR(${err.code}): ${err.message}`;
+				console.log(msg);
+				document.getElementById("loc").innerHTML = msg;
+			}
+		);
+	}
+</script>
+</body>
+</html>
