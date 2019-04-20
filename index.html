@@ -3,9 +3,27 @@
 <head>
 <title>Skip's Test Site</title>
 <meta charset="UTF-8">
-</head><body>
-
-<h1>Skip's Test Site</h1>
+<style>
+.page {
+	margin: 10px;
+	background-color: rgb(230, 225, 220);
+}
+.top-bar, .top-bar a {
+	padding: 3px;
+	background-color: rgb(48, 64, 204);
+	color: rgb(255, 255, 255);
+	font-family: Lato, sans-serif;
+	font-size: 24px;
+	text-shadow: rgb(3, 4, 12) 0px 2px 2px;
+	white-space: nowrap;
+	text-decoration: none;
+}
+.top-bar a:hover { color: rgb(200, 235, 255); }
+</style>
+<link href="data:image/x-icon;base64,AAABAAEAEBAQAAEABAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAACBI94APw2CADcIZgCAAP8Aah24AAQBCAAjCT0AdTPMAC4GVwCcXfAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAVVVVVXdVUAZVVVVVd1VQBlVVVVV3VVAGIiIiJXdVUAZEREQid5mZZkd3dwJ3AAJVVVVXCXdVUFVVVVcJd1VQBVV3dwl3VVA1VwAAkXdVUDVwmZlVd5mTNQlVVVUzMzNVCVVVVVVVVVUJVVVVVVVVVTmZmTVVVVVVgzMzhVVVVVUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" rel="icon" type="image/x-icon" />
+</head><body class="page">
+<div class="top-bar">&nbsp;&nbsp;&nbsp;&nbsp; Skip's Test Site &nbsp; | <a href="https://skuarua.com/">srEbird</a></div>
+<br/><br/>
 <div id="info"></div>
 <hr/>
 <div id="loc"></div>
@@ -19,6 +37,7 @@
 
 	function getCurrentLocation() {
 		console.log("getCurrentLocation: getCurrentPosition...");
+		var el = document.getElementById("loc");
 		navigator.geolocation.getCurrentPosition(
 			function (pos) {
 				if (pos.coords != null) {
@@ -26,13 +45,13 @@
 					var lon = pos.coords.longitude;
 					var msg = lat + ", " + lon;
 					console.log("getCurrentLocation: " + msg);
-					document.getElementById("loc").innerHTML = msg;
+					el.innerHTML = msg;
 				}
 			},
 			function error(err) {
 				var msg = `ERROR(${err.code}): ${err.message}`;
 				console.log(msg);
-				document.getElementById("loc").innerHTML = msg;
+				el.innerHTML = msg;
 			}
 		);
 	}
