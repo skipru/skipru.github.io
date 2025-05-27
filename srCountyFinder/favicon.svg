@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+	width="512" height="512"
+	viewBox="0 0 512 512"
+	version="1.1"
+	xmlns="http://www.w3.org/2000/svg"
+	xmlns:xlink="http://www.w3.org/1999/xlink"
+	xml:space="preserve"
+	id="svg_srCountyFinder" >
+
+	<!-- Skip's Compass Rose (black and white) $Id: 2023-02-08 $ -->
+	<g
+			transform="translate(256, 256) scale(2.56,-2.56)"
+			stroke="black"
+			stroke-width="2"
+			id="sr_rose"
+			style="opacity:1.0">
+
+		<path fill="black"  d="M 0,0  -40,-40  0,-17  Z"  id="sr_bg_SSW" />
+		<path fill="white"  d="M 0,0  -40,-40  -17,0  Z"  id="sr_bg_WSW" />
+		<use xlink:href="#sr_bg_SSW" transform="rotate(90 0 0)" />
+		<use xlink:href="#sr_bg_SSW" transform="rotate(-90 0 0)" />
+		<use xlink:href="#sr_bg_SSW" transform="rotate(180 0 0)" />
+		<use xlink:href="#sr_bg_WSW" transform="rotate(90 0 0)" />
+		<use xlink:href="#sr_bg_WSW" transform="rotate(-90 0 0)" />
+		<use xlink:href="#sr_bg_WSW" transform="rotate(180 0 0)" />
+
+		<path fill="white"  d="M 0,0  0,75  16,16  Z"  id="sr_fg_NE" />
+		<path fill="black"  d="M 0,0  75,0  16,16  Z"  id="sr_fg_NW" />
+		<use xlink:href="#sr_fg_NE" transform="rotate(90 0 0)" />
+		<use xlink:href="#sr_fg_NE" transform="rotate(-90 0 0)" />
+		<use xlink:href="#sr_fg_NE" transform="rotate(180 0 0)" />
+		<use xlink:href="#sr_fg_NW" transform="rotate(90 0 0)" />
+		<use xlink:href="#sr_fg_NW" transform="rotate(-90 0 0)" />
+		<use xlink:href="#sr_fg_NW" transform="rotate(180 0 0)" />
+	</g>
+</svg>
