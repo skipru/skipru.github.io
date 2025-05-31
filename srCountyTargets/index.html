@@ -6,7 +6,7 @@
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="description" content="Skip's eBird Viewer">
 	<meta name="copyright" content="2015 (c) Skip Russell">
-	<meta name="version" content="$Id: index.html 55 2021-05-17 05:41:48Z skip $">
+	<meta name="version" content="$Id: index.html 105 2025-05-31 18:54:45Z skip $">
 	<title>Skip's eBird state/county selector page</title>
 	<link rel="icon shortcut" type="image/x-icon" href="./favicon.ico">
   <script type="module" crossorigin src="./index.js"></script>
@@ -42,6 +42,15 @@
 <span><input  id="skipsHotspotCheckbox"  form="skipsRegionForm" name="hotspot" type="checkbox"></span>
 <span><input  id="skipsApiLatLngText"    form="skipsRegionForm" name="latLng"  type="hidden"></span>
 <span><button id="skipsApiGoButton"      form="skipsRegionForm" >Go</button></span>
+
+<span>Filter:</span>
+<form id="skipsCommandForm">
+	<label for="skipsCommandTextbox">hide/show county species[, species...]</label>
+	<textarea id="skipsCommandTextbox" rows="1" cols="35"></textarea>
+	<br>
+	<span><button id="skipsCommandGoButton">Command</button></span>
+</form>
+
 <!-- </div> -->
 
 </div><!-- skipsSettingsPanel -->
